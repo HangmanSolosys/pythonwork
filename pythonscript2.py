@@ -4,9 +4,6 @@
 
 
 
-
-
-
 import subprocess
 import time
 import os
@@ -94,3 +91,20 @@ if docker_question == 'yes':
 else:
     print("Okay, we keep going.")
     
+    
+    
+def dockercontainerz():
+    
+    docker_question = input("Would you like me to pull a specific image from dockerhub? yes/no:\n")
+    if docker_question == 'yes':
+        print("What is the image in question?\n")
+        imagename = input()
+        print("Okay, I'm gonna get this image for you. Give me a second...")
+        time.sleep(4)
+        subprocess.call(['docker', 'pull', imagename])
+        print("The image you liked me to pull is now successfully downloaded")
+    
+    else:
+        print("Okay, we keep on going.")
+
+dockercontainerz()
