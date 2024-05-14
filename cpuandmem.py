@@ -1,4 +1,6 @@
 
+#This script checks for CPU and Memory usage if they are above a specific number (you can put any number)
+#If not it will tell you that both the CPU and the Memory are okay
 
 import psutil
 
@@ -27,5 +29,6 @@ def procfun():
         for process in processes:
             print(process.id, process.name(), process.cpu_percent())
 
-
+    else:
+        print("Memory and CPU are under 90")
 procfun()
